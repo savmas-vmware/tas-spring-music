@@ -3,7 +3,7 @@ applications:
 - name: spring-music
   memory: 1G
   random-route: true
-  path: build/libs/*.jar
+  path: build/libs/jenkins-pipeline-test-1.0.jar
   env:
     JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
 #    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
