@@ -1,16 +1,6 @@
 pipeline {
     agent any 
     stages {
-        stage('Build') { 
-            steps {
-                echo 'Start Build...'
-            }
-        }
-        stage('Test') { 
-            steps {
-                echo 'Run Tests...'
-            }
-        }
         stage('Assemble') { 
             steps {
                 echo 'Assemble Project...'
@@ -20,7 +10,7 @@ pipeline {
         stage('Deploy') { 
             steps {
                 echo 'Deploy to TAS'
-                sh 'cf login -a https://api.sys.paris.cf-app.com -u admin -p b-pw_UsF3yhvFWr3P7wlE93zp5k3Z6BJ --skip-ssl-validation -o org-2 -s org-2-dev'
+                sh 'cf login -a https://apps.sys.tas.platformdemosm.com -u admin -p tas_admin --skip-ssl-validation -o demo-org -s dev1'
                 sh 'cf push spring-music'
                 echo 'Deployment Completed!'
             }
